@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio de Semmar Thiziri - Étudiante en Master Génie Logiciel">
+    <meta name="theme-color" content="#557FFF">
+    <title>Semmar Thiziri - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="header-top">
+                <div class="logo">Semmar Thiziri</div>
+                <button class="theme-toggle" aria-label="Basculer le thème">
+                    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="breadcrumb">
+                <span class="breadcrumb-item active" data-section="home">Accueil</span>
+                <span class="breadcrumb-item" data-section="skills">Compétences</span>
+                <span class="breadcrumb-item" data-section="projects">Projets</span>
+                <span class="breadcrumb-item" data-section="education">Éducation</span>
+                <span class="breadcrumb-item" data-section="contact">Contact</span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero section-fade">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title animate-fadeInUp">Semmar Thiziri</h1>
+                    <p class="hero-subtitle animate-fadeInUp" style="animation-delay: 100ms">
+                        Étudiante en Master 1 Génie Logiciel, passionnée par le développement d'applications et les technologies émergentes.
+                    </p>
+                    <p class="hero-description animate-fadeInUp" style="animation-delay: 200ms">
+                        Je construis des applications innovantes en combinant développement frontend et backend. Rigoureuse et motivée, j'explore constamment les intersections entre la technologie, le design et la gestion de projets.
+                    </p>
+                    <div class="hero-actions animate-fadeInUp" style="animation-delay: 300ms">
+                        <a href="#projects" class="btn btn-primary">Voir mes projets</a>
+                        <div class="social-links">
+                            <a href="mailto:semmarthiziri@gmail.com" class="social-link" aria-label="Email">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                            </a>
+                            <a href="#" class="social-link" aria-label="GitHub">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v 3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path>
+                                </svg>
+                            </a>
+                            <a href="#" class="social-link" aria-label="LinkedIn">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section-fade">
+            <div class="container">
+                <h2 class="section-title animate-fadeInUp">Compétences Techniques</h2>
+                <div class="skills-grid">
+                    <div class="skill-category animate-fadeInUp" style="animation-delay: 100ms">
+                        <h3 class="skill-category-title">Frontend</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">HTML/CSS</span>
+                            <span class="skill-tag">Tailwind CSS</span>
+                            <span class="skill-tag">Next.js</span>
+                        </div>
+                    </div>
+                    <div class="skill-category animate-fadeInUp" style="animation-delay: 200ms">
+                        <h3 class="skill-category-title">Backend</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">SQL</span>
+                            <span class="skill-tag">Firebase</span>
+                            <span class="skill-tag">REST API</span>
+                        </div>
+                    </div>
+                    <div class="skill-category animate-fadeInUp" style="animation-delay: 300ms">
+                        <h3 class="skill-category-title">Mobile</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Flutter</span>
+                            <span class="skill-tag">React Native</span>
+                            <span class="skill-tag">Dart</span>
+                        </div>
+                    </div>
+                    <div class="skill-category animate-fadeInUp" style="animation-delay: 400ms">
+                        <h3 class="skill-category-title">Outils</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">Figma</span>
+                            <span class="skill-tag">VS Code</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section-fade">
+            <div class="container">
+                <h2 class="section-title animate-fadeInUp">Projets Académiques</h2>
+                <div class="projects-list">
+                    <!-- MediCab Project -->
+                    <div class="project-card animate-fadeInUp" style="animation-delay: 100ms">
+                        <h3 class="project-title">Gestion d'un Cabinet Médical (MediCab)</h3>
+                        <div class="project-gallery">
+                            <div class="gallery-container">
+                                <img src="public/images/medicab-welcome.jpg" alt="MediCab Welcome" class="gallery-image">
+                            </div>
+                            <div class="gallery-controls">
+                                <button class="gallery-prev" aria-label="Image précédente">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="15 18 9 12 15 6"></polyline>
+                                    </svg>
+                                </button>
+                                <div class="gallery-dots"></div>
+                                <button class="gallery-next" aria-label="Image suivante">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="9 18 15 12 9 6"></polyline>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <p class="project-description">
+                            Application mobile complète pour gérer les rendez-vous, dossiers patients et paiements avec authentification multi-rôles. Offre une expérience utilisateur intuitive avec design moderne et navigation fluide.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Flutter</span>
+                            <span class="tech-tag">SQL</span>
+                            <span class="tech-tag">Firebase</span>
+                        </div>
+                        <div class="project-highlights">
+                            <span class="highlight">• Gestion des rendez-vous</span>
+                            <span class="highlight">• Dossiers patients</span>
+                            <span class="highlight">• Système de paiement</span>
+                            <span class="highlight">• Auth multi-rôles</span>
+                        </div>
+                    </div>
+
+                    <!-- Other Projects -->
+                    <div class="project-card animate-fadeInUp" style="animation-delay: 200ms">
+                        <h3 class="project-title">Gestion de Bibliothèque</h3>
+                        <p class="project-description">
+                            Système complet de gestion de bibliothèque avec emprunts, retours et notifications. Interface utilisateur intuitive et gestion efficace des stocks.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">SQLite</span>
+                            <span class="tech-tag">Flask</span>
+                        </div>
+                        <div class="project-highlights">
+                            <span class="highlight">• Gestion des emprunts</span>
+                            <span class="highlight">• Système de notifications</span>
+                            <span class="highlight">• Catalogue de livres</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card animate-fadeInUp" style="animation-delay: 300ms">
+                        <h3 class="project-title">Application de Gestion Budgétaire</h3>
+                        <p class="project-description">
+                            Application desktop pour suivre les dépenses, créer des budgets et générer des rapports détaillés. Visualisation complète des finances personnelles.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                        </div>
+                        <div class="project-highlights">
+                            <span class="highlight">• Suivi des dépenses</span>
+                            <span class="highlight">• Rapports financiers</span>
+                            <span class="highlight">• Graphiques détaillés</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card animate-fadeInUp" style="animation-delay: 400ms">
+                        <h3 class="project-title">Site d'Échange de Livres</h3>
+                        <p class="project-description">
+                            Plateforme web communautaire pour échanger des livres entre lecteurs. Système de recherche avancée et messagerie intégrée.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                        </div>
+                        <div class="project-highlights">
+                            <span class="highlight">• Recherche de livres</span>
+                            <span class="highlight">• Messagerie intégrée</span>
+                            <span class="highlight">• Système de notation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="section-fade">
+            <div class="container">
+                <h2 class="section-title animate-fadeInUp">Parcours Académique</h2>
+                <div class="education-timeline">
+                    <div class="education-item animate-fadeInUp" style="animation-delay: 100ms">
+                        <div class="timeline-marker"></div>
+                        <div class="education-content">
+                            <h3 class="education-degree">Master 1 Génie Logiciel</h3>
+                            <p class="education-school">Université de Béjaïa</p>
+                            <div class="education-meta">
+                                <span class="education-period">2023 - 2025</span>
+                                <span class="education-status">En cours</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="education-item animate-fadeInUp" style="animation-delay: 200ms">
+                        <div class="timeline-marker"></div>
+                        <div class="education-content">
+                            <h3 class="education-degree">Licence Informatique</h3>
+                            <p class="education-school">Université de Béjaïa</p>
+                            <div class="education-meta">
+                                <span class="education-period">2020 - 2023</span>
+                                <span class="education-status">Obtenu</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="education-item animate-fadeInUp" style="animation-delay: 300ms">
+                        <div class="timeline-marker"></div>
+                        <div class="education-content">
+                            <h3 class="education-degree">Baccalauréat Scientifique</h3>
+                            <p class="education-school">Lycée de Béjaïa</p>
+                            <div class="education-meta">
+                                <span class="education-period">2017 - 2020</span>
+                                <span class="education-status">Obtenu</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section-fade">
+            <div class="container">
+                <h2 class="section-title animate-fadeInUp">Prenez contact</h2>
+                <div class="contact-wrapper">
+                    <form class="contact-form animate-fadeInUp" style="animation-delay: 100ms" id="contactForm">
+                        <div class="form-group">
+                            <input 
+                                type="text" 
+                                id="name" 
+                                placeholder="Votre nom" 
+                                class="form-input" 
+                                required
+                            >
+                        </div>
+                        <div class="form-group">
+                            <input 
+                                type="email" 
+                                id="email" 
+                                placeholder="Votre email" 
+                                class="form-input" 
+                                required
+                            >
+                        </div>
+                        <div class="form-group">
+                            <textarea 
+                                id="message" 
+                                placeholder="Votre message" 
+                                class="form-textarea" 
+                                rows="5" 
+                                required
+                            ></textarea>
+                        </div>
+                        <div id="formError" class="form-error"></div>
+                        <button type="submit" class="btn btn-primary btn-full">Envoyer le message</button>
+                    </form>
+                    <div class="contact-info animate-fadeInUp" style="animation-delay: 200ms">
+                        <h3 class="contact-title">Informations de contact</h3>
+                        <div class="contact-item">
+                            <span class="contact-icon">📧</span>
+                            <div>
+                                <p class="contact-label">Email</p>
+                                <a href="mailto:semmarthiziri@gmail.com" class="contact-value">semmarthiziri@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📱</span>
+                            <div>
+                                <p class="contact-label">Téléphone</p>
+                                <p class="contact-value">+213 (0) 799 123 456</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📍</span>
+                            <div>
+                                <p class="contact-label">Localisation</p>
+                                <p class="contact-value">Béjaïa, Algérie</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Semmar Thiziri. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
