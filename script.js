@@ -1,3 +1,30 @@
+// ===== Mobile Menu Toggle =====
+const menuToggle = document.querySelector('.menu-toggle');
+const navMenu = document.querySelector('#navMenu');
+
+if (menuToggle) {
+  menuToggle.addEventListener('click', () => {
+    menuToggle.classList.toggle('active');
+    navMenu.classList.toggle('active');
+  });
+
+  // Close menu when a link is clicked
+  document.querySelectorAll('.breadcrumb-item').forEach((item) => {
+    item.addEventListener('click', () => {
+      menuToggle.classList.remove('active');
+      navMenu.classList.remove('active');
+    });
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.nav-container')) {
+      menuToggle.classList.remove('active');
+      navMenu.classList.remove('active');
+    }
+  });
+}
+
 // ===== Theme Toggle =====
 const themeToggle = document.querySelector('.theme-toggle');
 const htmlElement = document.documentElement;
@@ -69,14 +96,10 @@ updateBreadcrumb(); // Initial call
 class ProjectGallery {
   constructor(card) {
     this.card = card;
-    this.images = [
-      'public/images/medicab-welcome.jpg',
-      'public/images/medicab-login.jpg',
-      'public/images/medicab-register.jpg',
-      'public/images/medicab-doctor.jpg'
-    ];
+    this.container = card.querySelector('.gallery-container');
+    this.allImages = Array.from(this.container.querySelectorAll('.gallery-image'));
     this.currentIndex = 0;
-    this.imageElement = this.card.querySelector('.gallery-image');
+    this.imageElement = this.container.querySelector('.gallery-image');
     this.prevBtn = this.card.querySelector('.gallery-prev');
     this.nextBtn = this.card.querySelector('.gallery-next');
     this.dotsContainer = this.card.querySelector('.gallery-dots');
@@ -85,10 +108,10 @@ class ProjectGallery {
   }
 
   initGallery() {
-    if (!this.imageElement) return;
+    if (!this.imageElement || this.allImages.length === 0) return;
 
     // Create dots
-    this.images.forEach((_, index) => {
+    this.allImages.forEach((_, index) => {
       const dot = document.createElement('button');
       dot.className = `gallery-dot ${index === 0 ? 'active' : ''}`;
       dot.setAttribute('aria-label', `Image ${index + 1}`);
@@ -96,19 +119,37 @@ class ProjectGallery {
       this.dotsContainer.appendChild(dot);
     });
 
-    // Event listeners
-    this.prevBtn?.addEventListener('click', () => this.prevSlide());
-    this.nextBtn?.addEventListener('click', () => this.nextSlide());
+    // Show first image
+    this.showImage(this.currentIndex);
+
+    // Button listeners
+    if (this.prevBtn) {
+      this.prevBtn.addEventListener('click', () => this.prev());
+    }
+    if (this.nextBtn) {
+      this.nextBtn.addEventListener('click', () => this.next());
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') this.prev();
+      if (e.key === 'ArrowRight') this.next();
+    });
   }
 
-  updateGallery() {
-    if (this.imageElement) {
-      this.imageElement.src = this.images[this.currentIndex];
+  showImage(index) {
+    // Hide all images
+    this.allImages.forEach((img) => {
+      img.style.display = 'none';
+    });
+    // Show current image
+    if (this.allImages[index]) {
+      this.allImages[index].style.display = 'block';
     }
 
     // Update dots
-    document.querySelectorAll('.gallery-dot').forEach((dot, index) => {
-      if (index === this.currentIndex) {
+    document.querySelectorAll('.gallery-dot').forEach((dot, i) => {
+      if (i === index) {
         dot.classList.add('active');
       } else {
         dot.classList.remove('active');
@@ -116,28 +157,29 @@ class ProjectGallery {
     });
   }
 
-  prevSlide() {
-    this.currentIndex = this.currentIndex === 0 ? this.images.length - 1 : this.currentIndex - 1;
-    this.updateGallery();
+  next() {
+    this.currentIndex = (this.currentIndex + 1) % this.allImages.length;
+    this.showImage(this.currentIndex);
   }
 
-  nextSlide() {
-    this.currentIndex = this.currentIndex === this.images.length - 1 ? 0 : this.currentIndex + 1;
-    this.updateGallery();
+  prev() {
+    this.currentIndex = (this.currentIndex - 1 + this.allImages.length) % this.allImages.length;
+    this.showImage(this.currentIndex);
   }
 
   goToSlide(index) {
     this.currentIndex = index;
-    this.updateGallery();
+    this.showImage(this.currentIndex);
   }
 }
 
-// Initialize galleries for MediCab project
+// Initialize galleries for all project cards
 const projectCards = document.querySelectorAll('.project-card');
-const firstCard = projectCards[0];
-if (firstCard && firstCard.querySelector('.gallery-image')) {
-  new ProjectGallery(firstCard);
-}
+projectCards.forEach((card) => {
+  if (card.querySelector('.gallery-container')) {
+    new ProjectGallery(card);
+  }
+});
 
 // ===== Contact Form =====
 const contactForm = document.getElementById('contactForm');

@@ -14,7 +14,8 @@
         <nav class="nav-container">
             <div class="header-top">
                 <div class="logo">Semmar Thiziri</div>
-                <button class="theme-toggle" aria-label="Basculer le thème">
+                <div class="header-actions">
+                    <button class="theme-toggle" aria-label="Basculer le thème">
                     <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <circle cx="12" cy="12" r="5"></circle>
                         <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -29,13 +30,21 @@
                     <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                     </svg>
-                </button>
+                    </button>
+                    <button class="menu-toggle" aria-label="Basculer le menu">
+                        <span class="hamburger"></span>
+                        <span class="hamburger"></span>
+                        <span class="hamburger"></span>
+                    </button>
+                </div>
             </div>
-            <div class="breadcrumb">
+            <div class="breadcrumb" id="navMenu">
                 <span class="breadcrumb-item active" data-section="home">Accueil</span>
                 <span class="breadcrumb-item" data-section="skills">Compétences</span>
                 <span class="breadcrumb-item" data-section="projects">Projets</span>
                 <span class="breadcrumb-item" data-section="education">Éducation</span>
+                <span class="breadcrumb-item" data-section="languages">Langues</span>
+                <span class="breadcrumb-item" data-section="interests">Intérêts</span>
                 <span class="breadcrumb-item" data-section="contact">Contact</span>
             </div>
         </nav>
@@ -85,40 +94,49 @@
                 <h2 class="section-title animate-fadeInUp">Compétences Techniques</h2>
                 <div class="skills-grid">
                     <div class="skill-category animate-fadeInUp" style="animation-delay: 100ms">
-                        <h3 class="skill-category-title">Frontend</h3>
+                        <h3 class="skill-category-title">Langages de Programmation</h3>
                         <div class="skill-tags">
-                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">Java</span>
+                            <span class="skill-tag">Python</span>
                             <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">PHP</span>
+                            <span class="skill-tag">C</span>
+                            <span class="skill-tag">SQL</span>
                             <span class="skill-tag">HTML/CSS</span>
-                            <span class="skill-tag">Tailwind CSS</span>
-                            <span class="skill-tag">Next.js</span>
+                            <span class="skill-tag">Dart</span>
+                            <span class="skill-tag">Prolog</span>
+                            <span class="skill-tag">Matlab</span>
                         </div>
                     </div>
                     <div class="skill-category animate-fadeInUp" style="animation-delay: 200ms">
-                        <h3 class="skill-category-title">Backend</h3>
+                        <h3 class="skill-category-title">Frameworks & Technologies</h3>
                         <div class="skill-tags">
-                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Flutter</span>
+                            <span class="skill-tag">Ionic</span>
+                            <span class="skill-tag">React</span>
                             <span class="skill-tag">Node.js</span>
-                            <span class="skill-tag">SQL</span>
-                            <span class="skill-tag">Firebase</span>
-                            <span class="skill-tag">REST API</span>
+                            <span class="skill-tag">Bootstrap</span>
                         </div>
                     </div>
                     <div class="skill-category animate-fadeInUp" style="animation-delay: 300ms">
-                        <h3 class="skill-category-title">Mobile</h3>
+                        <h3 class="skill-category-title">Bases de Données</h3>
                         <div class="skill-tags">
-                            <span class="skill-tag">Flutter</span>
-                            <span class="skill-tag">React Native</span>
-                            <span class="skill-tag">Dart</span>
+                            <span class="skill-tag">MySQL</span>
+                            <span class="skill-tag">Firebase</span>
+                            <span class="skill-tag">Oracle</span>
                         </div>
                     </div>
                     <div class="skill-category animate-fadeInUp" style="animation-delay: 400ms">
-                        <h3 class="skill-category-title">Outils</h3>
+                        <h3 class="skill-category-title">Outils & Environnements</h3>
                         <div class="skill-tags">
-                            <span class="skill-tag">Git</span>
-                            <span class="skill-tag">Docker</span>
-                            <span class="skill-tag">Figma</span>
                             <span class="skill-tag">VS Code</span>
+                            <span class="skill-tag">Eclipse</span>
+                            <span class="skill-tag">NetBeans</span>
+                            <span class="skill-tag">Android Studio</span>
+                            <span class="skill-tag">Git/GitHub</span>
+                            <span class="skill-tag">Figma</span>
+                            <span class="skill-tag">LaTeX</span>
+                            <span class="skill-tag">Cisco Packet Tracer</span>
                         </div>
                     </div>
                 </div>
@@ -135,8 +153,29 @@
                         <h3 class="project-title">Gestion d'un Cabinet Médical (MediCab)</h3>
                         <div class="project-gallery">
                             <div class="gallery-container">
-                                <img src="public/images/medicab-welcome.jpg" alt="MediCab Welcome" class="gallery-image">
+                                <img class="gallery-image" src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/welcom-jGuKCZVw1OIfhp4r3RtVrV1rfQBszl.jpg" alt="Écran splash MediCab">
+                                <img class="gallery-image" src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/cnx1%20-%20Copie-gRSatH5d9URUQdxNRB2iTwSXAJwYDz.jpg" alt="Écran login MediCab">
+                                <img class="gallery-image" src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/cnx2-2QC9FRAzjQlZgrpxyvZImea6tT7dna.jpg" alt="Écran mot de passe oublié">
+                                <img class="gallery-image" src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/cnx3-yfj8ni5Lu6DHUDVaQNThiaAzzps3gi.jpg" alt="Écran inscription MediCab">
+                                <img class="gallery-image" src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/patint11-W0bNVUr3Zh2FHM0dgWWUG0rGdiTMZN.jpg" alt="Écran accueil avec médecins">
+                                <img class="gallery-image" src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/secr1-D6RqX2zUvanvrFOD9iyjGVTb7EYooq.jpg" alt="Écran rendez-vous">
+                                <img class="gallery-image" src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/patient1%20-%20Copie-jyAv6kCDuvektSAQcOynJcZW90Dp6g.jpg" alt="Profil médecin avec calendrier">
+                                <img class="gallery-image" src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/medecin2-TuZNsl63y6uLcXEaLe6OoWSUbLp4gw.jpg" alt="Profil médecin informations">
                             </div>
+                            <div class="gallery-controls">
+                                <button class="gallery-prev" aria-label="Image précédente">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="15 18 9 12 15 6"></polyline>
+                                    </svg>
+                                </button>
+                                <div class="gallery-dots"></div>
+                                <button class="gallery-next" aria-label="Image suivante">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="9 18 15 12 9 6"></polyline>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
                             <div class="gallery-controls">
                                 <button class="gallery-prev" aria-label="Image précédente">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -169,55 +208,40 @@
 
                     <!-- Other Projects -->
                     <div class="project-card animate-fadeInUp" style="animation-delay: 200ms">
-                        <h3 class="project-title">Gestion de Bibliothèque</h3>
+                        <h3 class="project-title">Gestion d'une Bibliothèque</h3>
                         <p class="project-description">
-                            Système complet de gestion de bibliothèque avec emprunts, retours et notifications. Interface utilisateur intuitive et gestion efficace des stocks.
+                            Application web et mobile hybride permettant la consultation et l'échange de livres. Intègre l'API OpenLibrary pour la recherche d'auteurs et d'œuvres avec interface intuitive et design responsive.
                         </p>
                         <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">SQLite</span>
-                            <span class="tech-tag">Flask</span>
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Ionic</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Bootstrap</span>
                         </div>
                         <div class="project-highlights">
-                            <span class="highlight">• Gestion des emprunts</span>
-                            <span class="highlight">• Système de notifications</span>
-                            <span class="highlight">• Catalogue de livres</span>
+                            <span class="highlight">• Consultation de livres</span>
+                            <span class="highlight">• Échange de livres</span>
+                            <span class="highlight">• Intégration API OpenLibrary</span>
                         </div>
                     </div>
 
                     <div class="project-card animate-fadeInUp" style="animation-delay: 300ms">
-                        <h3 class="project-title">Application de Gestion Budgétaire</h3>
+                        <h3 class="project-title">Gestion d'un Budget Personnel</h3>
                         <p class="project-description">
-                            Application desktop pour suivre les dépenses, créer des budgets et générer des rapports détaillés. Visualisation complète des finances personnelles.
+                            Application desktop pour la gestion des revenus et dépenses avec calcul automatique du solde. Offre une visualisation graphique complète de l'évolution budgétaire.
                         </p>
                         <div class="project-tech">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">MySQL</span>
                         </div>
                         <div class="project-highlights">
-                            <span class="highlight">• Suivi des dépenses</span>
-                            <span class="highlight">• Rapports financiers</span>
-                            <span class="highlight">• Graphiques détaillés</span>
+                            <span class="highlight">• Gestion des revenus/dépenses</span>
+                            <span class="highlight">• Calcul automatique du solde</span>
+                            <span class="highlight">• Visualisation graphique</span>
                         </div>
                     </div>
 
-                    <div class="project-card animate-fadeInUp" style="animation-delay: 400ms">
-                        <h3 class="project-title">Site d'Échange de Livres</h3>
-                        <p class="project-description">
-                            Plateforme web communautaire pour échanger des livres entre lecteurs. Système de recherche avancée et messagerie intégrée.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">PostgreSQL</span>
-                        </div>
-                        <div class="project-highlights">
-                            <span class="highlight">• Recherche de livres</span>
-                            <span class="highlight">• Messagerie intégrée</span>
-                            <span class="highlight">• Système de notation</span>
-                        </div>
-                    </div>
+
                 </div>
             </div>
         </section>
@@ -231,9 +255,9 @@
                         <div class="timeline-marker"></div>
                         <div class="education-content">
                             <h3 class="education-degree">Master 1 Génie Logiciel</h3>
-                            <p class="education-school">Université de Béjaïa</p>
+                            <p class="education-school">Université Abderrahmane Mira, Béjaïa (Algérie)</p>
                             <div class="education-meta">
-                                <span class="education-period">2023 - 2025</span>
+                                <span class="education-period">2025 - 2026</span>
                                 <span class="education-status">En cours</span>
                             </div>
                         </div>
@@ -242,10 +266,10 @@
                     <div class="education-item animate-fadeInUp" style="animation-delay: 200ms">
                         <div class="timeline-marker"></div>
                         <div class="education-content">
-                            <h3 class="education-degree">Licence Informatique</h3>
-                            <p class="education-school">Université de Béjaïa</p>
+                            <h3 class="education-degree">Licence en Systèmes Informatiques</h3>
+                            <p class="education-school">Université Abderrahmane Mira, Béjaïa (Algérie)</p>
                             <div class="education-meta">
-                                <span class="education-period">2020 - 2023</span>
+                                <span class="education-period">2022 - 2025</span>
                                 <span class="education-status">Obtenu</span>
                             </div>
                         </div>
@@ -255,9 +279,9 @@
                         <div class="timeline-marker"></div>
                         <div class="education-content">
                             <h3 class="education-degree">Baccalauréat Scientifique</h3>
-                            <p class="education-school">Lycée de Béjaïa</p>
+                            <p class="education-school">Lycée Marhoum Yayssi Abdelkader, Béjaïa (Algérie)</p>
                             <div class="education-meta">
-                                <span class="education-period">2017 - 2020</span>
+                                <span class="education-period">2022</span>
                                 <span class="education-status">Obtenu</span>
                             </div>
                         </div>
@@ -266,69 +290,95 @@
             </div>
         </section>
 
+        <!-- Languages Section -->
+        <section id="languages" class="section-fade">
+            <div class="container">
+                <h2 class="section-title animate-fadeInUp">Langues</h2>
+                <div class="languages-grid">
+                    <div class="language-item animate-fadeInUp" style="animation-delay: 100ms">
+                        <h3 class="language-name">Arabe</h3>
+                        <p class="language-level">Langue maternelle</p>
+                    </div>
+                    <div class="language-item animate-fadeInUp" style="animation-delay: 150ms">
+                        <h3 class="language-name">Kabyle</h3>
+                        <p class="language-level">Langue maternelle</p>
+                    </div>
+                    <div class="language-item animate-fadeInUp" style="animation-delay: 200ms">
+                        <h3 class="language-name">Français</h3>
+                        <p class="language-level">Niveau B2 (Compr��hension écrite C1)</p>
+                    </div>
+                    <div class="language-item animate-fadeInUp" style="animation-delay: 250ms">
+                        <h3 class="language-name">Anglais</h3>
+                        <p class="language-level">Niveau B1</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interests Section -->
+        <section id="interests" class="section-fade">
+            <div class="container">
+                <h2 class="section-title animate-fadeInUp">Centres d'Intérêt</h2>
+                <div class="interests-grid">
+                    <div class="interest-item animate-fadeInUp" style="animation-delay: 100ms">
+                        <div class="interest-icon">📱</div>
+                        <h3 class="interest-title">Développement Mobile et Web</h3>
+                        <p class="interest-description">Création d'applications innovantes pour mobile et web</p>
+                    </div>
+                    <div class="interest-item animate-fadeInUp" style="animation-delay: 150ms">
+                        <div class="interest-icon">🎨</div>
+                        <h3 class="interest-title">Design d'Interfaces (UI/UX)</h3>
+                        <p class="interest-description">Conception d'interfaces utilisateur attrayantes et intuitives</p>
+                    </div>
+                    <div class="interest-item animate-fadeInUp" style="animation-delay: 200ms">
+                        <div class="interest-icon">📊</div>
+                        <h3 class="interest-title">Gestion de Projets Informatiques</h3>
+                        <p class="interest-description">Coordination et organisation de projets tech</p>
+                    </div>
+                    <div class="interest-item animate-fadeInUp" style="animation-delay: 250ms">
+                        <div class="interest-icon">🤖</div>
+                        <h3 class="interest-title">Intelligence Artificielle et Innovation</h3>
+                        <p class="interest-description">Exploration des technologies émergentes et IA</p>
+                    </div>
+                    <div class="interest-item animate-fadeInUp" style="animation-delay: 300ms">
+                        <div class="interest-icon">💼</div>
+                        <h3 class="interest-title">Entrepreneuriat Digital</h3>
+                        <p class="interest-description">Transformation numérique et création de startups</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Contact Section -->
         <section id="contact" class="section-fade">
             <div class="container">
-                <h2 class="section-title animate-fadeInUp">Prenez contact</h2>
-                <div class="contact-wrapper">
-                    <form class="contact-form animate-fadeInUp" style="animation-delay: 100ms" id="contactForm">
-                        <div class="form-group">
-                            <input 
-                                type="text" 
-                                id="name" 
-                                placeholder="Votre nom" 
-                                class="form-input" 
-                                required
-                            >
+                <h2 class="section-title animate-fadeInUp">Contact</h2>
+                <div class="contact-info-grid">
+                    <div class="contact-item animate-fadeInUp" style="animation-delay: 100ms">
+                        <span class="contact-icon">📧</span>
+                        <div>
+                            <p class="contact-label">Email</p>
+                            <a href="mailto:semmarthiziri@gmail.com" class="contact-value">semmarthiziri@gmail.com</a>
                         </div>
-                        <div class="form-group">
-                            <input 
-                                type="email" 
-                                id="email" 
-                                placeholder="Votre email" 
-                                class="form-input" 
-                                required
-                            >
+                    </div>
+                    <div class="contact-item animate-fadeInUp" style="animation-delay: 150ms">
+                        <span class="contact-icon">📱</span>
+                        <div>
+                            <p class="contact-label">Téléphone</p>
+                            <p class="contact-value">+213 554 555 911</p>
                         </div>
-                        <div class="form-group">
-                            <textarea 
-                                id="message" 
-                                placeholder="Votre message" 
-                                class="form-textarea" 
-                                rows="5" 
-                                required
-                            ></textarea>
-                        </div>
-                        <div id="formError" class="form-error"></div>
-                        <button type="submit" class="btn btn-primary btn-full">Envoyer le message</button>
-                    </form>
-                    <div class="contact-info animate-fadeInUp" style="animation-delay: 200ms">
-                        <h3 class="contact-title">Informations de contact</h3>
-                        <div class="contact-item">
-                            <span class="contact-icon">📧</span>
-                            <div>
-                                <p class="contact-label">Email</p>
-                                <a href="mailto:semmarthiziri@gmail.com" class="contact-value">semmarthiziri@gmail.com</a>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <span class="contact-icon">📱</span>
-                            <div>
-                                <p class="contact-label">Téléphone</p>
-                                <p class="contact-value">+213 (0) 799 123 456</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <span class="contact-icon">📍</span>
-                            <div>
-                                <p class="contact-label">Localisation</p>
-                                <p class="contact-value">Béjaïa, Algérie</p>
-                            </div>
+                    </div>
+                    <div class="contact-item animate-fadeInUp" style="animation-delay: 200ms">
+                        <span class="contact-icon">📍</span>
+                        <div>
+                            <p class="contact-label">Localisation</p>
+                            <p class="contact-value">Béjaïa, Algérie</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
     </main>
 
     <!-- Footer -->
