@@ -69,45 +69,55 @@ updateBreadcrumb(); // Initial call
 class ProjectGallery {
   constructor(card) {
     this.card = card;
-    this.images = [
-      'public/images/medicab-welcome.jpg',
-      'public/images/medicab-login.jpg',
-      'public/images/medicab-register.jpg',
-      'public/images/medicab-doctor.jpg'
-    ];
     this.currentIndex = 0;
-    this.imageElement = this.card.querySelector('.gallery-image');
+    this.imageElements = Array.from(this.card.querySelectorAll('.gallery-image'));
     this.prevBtn = this.card.querySelector('.gallery-prev');
     this.nextBtn = this.card.querySelector('.gallery-next');
     this.dotsContainer = this.card.querySelector('.gallery-dots');
 
-    this.initGallery();
+    if (this.imageElements.length > 0) {
+      this.initGallery();
+    }
   }
 
   initGallery() {
-    if (!this.imageElement) return;
-
     // Create dots
-    this.images.forEach((_, index) => {
+    this.imageElements.forEach((_, index) => {
       const dot = document.createElement('button');
       dot.className = `gallery-dot ${index === 0 ? 'active' : ''}`;
       dot.setAttribute('aria-label', `Image ${index + 1}`);
-      dot.addEventListener('click', () => this.goToSlide(index));
+      dot.addEventListener('click', (e) => {
+        e.preventDefault();
+        this.goToSlide(index);
+      });
       this.dotsContainer.appendChild(dot);
     });
 
-    // Event listeners
-    this.prevBtn?.addEventListener('click', () => this.prevSlide());
-    this.nextBtn?.addEventListener('click', () => this.nextSlide());
+    // Event listeners with preventDefault
+    this.prevBtn?.addEventListener('click', (e) => {
+      e.preventDefault();
+      this.prevSlide();
+    });
+    this.nextBtn?.addEventListener('click', (e) => {
+      e.preventDefault();
+      this.nextSlide();
+    });
+
+    // Hide all images except first one
+    this.imageElements.forEach((img, index) => {
+      img.style.display = index === 0 ? 'block' : 'none';
+    });
   }
 
   updateGallery() {
-    if (this.imageElement) {
-      this.imageElement.src = this.images[this.currentIndex];
-    }
+    // Show/hide images
+    this.imageElements.forEach((img, index) => {
+      img.style.display = index === this.currentIndex ? 'block' : 'none';
+    });
 
     // Update dots
-    document.querySelectorAll('.gallery-dot').forEach((dot, index) => {
+    const dots = this.card.querySelectorAll('.gallery-dot');
+    dots.forEach((dot, index) => {
       if (index === this.currentIndex) {
         dot.classList.add('active');
       } else {
@@ -117,12 +127,12 @@ class ProjectGallery {
   }
 
   prevSlide() {
-    this.currentIndex = this.currentIndex === 0 ? this.images.length - 1 : this.currentIndex - 1;
+    this.currentIndex = this.currentIndex === 0 ? this.imageElements.length - 1 : this.currentIndex - 1;
     this.updateGallery();
   }
 
   nextSlide() {
-    this.currentIndex = this.currentIndex === this.images.length - 1 ? 0 : this.currentIndex + 1;
+    this.currentIndex = this.currentIndex === this.imageElements.length - 1 ? 0 : this.currentIndex + 1;
     this.updateGallery();
   }
 
@@ -132,12 +142,12 @@ class ProjectGallery {
   }
 }
 
-// Initialize galleries for MediCab project
+// Initialize galleries for all projects
 const projectCards = document.querySelectorAll('.project-card');
-const firstCard = projectCards[0];
-if (firstCard && firstCard.querySelector('.gallery-image')) {
-  new ProjectGallery(firstCard);
-}
+projectCards.forEach((card) => {
+  new ProjectGallery(card);
+});
+
 
 // ===== Contact Form =====
 const contactForm = document.getElementById('contactForm');
