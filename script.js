@@ -27,6 +27,15 @@ themeToggle.addEventListener('click', () => {
 
 initTheme();
 
+// ===== Menu Toggle =====
+const menuToggle = document.querySelector('.menu-toggle');
+const navMenu = document.getElementById('navMenu');
+
+menuToggle.addEventListener('click', () => {
+  menuToggle.classList.toggle('active');
+  navMenu.classList.toggle('active');
+});
+
 // ===== Breadcrumb Navigation =====
 const breadcrumbItems = document.querySelectorAll('.breadcrumb-item');
 const sections = document.querySelectorAll('section');
